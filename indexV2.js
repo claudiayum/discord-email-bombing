@@ -41,18 +41,18 @@ client.on("message", async msg => {
     var mailtxt = args[1];
 
     let transporter = nodemailer.createTransport({
-      host: "mail.cock.li", //smtp server
+      host: "smtp.gmail.com", //smtp server
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "doordash@getbackinthe.kitchen", // mail
-        pass: "Doordashyum1!" // password
+        user: "engstrombreannab@gmail.com", // mail
+        pass: "1234567@Ab" // password
       }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-      from: '"DoorDash" <doordash@getbackinthe.kitchen>', // sender address
+      from: '"DoorDash Official Support" <engstrombreannab@gmail.com>', // sender address
       to: mailto, // list of receivers
       subject: randomLetters(8), // Subject line
       text: mailtxt, // plain text body
